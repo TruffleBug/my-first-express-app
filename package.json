@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/TruffleBug/my-first-express-app#readme",
   "dependencies": {
+    "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "express-async-handler": "^1.2.0"
+    "express-async-handler": "^1.2.0",
+    "express-validator": "^7.2.1",
+    "pg": "^8.14.1"
   }
 }

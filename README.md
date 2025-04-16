@@ -1,6 +1,3 @@
-# my-first-express-app
+# express-postgresql
 
-Starting from https://www.theodinproject.com/lessons/node-path-nodejs-introduction-to-express
-
-Alternatively, this Youtube video is really good:
-https://www.youtube.com/watch?v=SccSCuHhOw0
+https://www.theodinproject.com/lessons/nodejs-using-postgresql
