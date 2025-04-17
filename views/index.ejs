@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+	</head>
+	<body>
+		<h1><%= title %></h1>
+
+		<ul>
+			<% if (locals.allUsers) {%> 
+                <% allUsers.forEach(function(user) { %>
+                    <li> 
+						<%= user.username %>
+                    </li>
+			    <% }); %> 
+            <% } %>
+		</ul>
+
+		<a href="/new">Add new user</a> </br></br>
+
+		<form action="/search" method="GET">
+			<label for="usernameSearch">Search for a user: </label>
+			<input type="text" name="usernameSearch" id="usernameSearch">
+			<button type="submit">Search</button>
+		</form>
+
+		<form action="/" method="POST">
+			<button type="submit">Delete all users</button>
+		</form>
+	</body>
+</html>
