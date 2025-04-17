@@ -14,9 +14,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // ROUTERS
 const newRouter = require('./routes/newRouter');
+const deleteRouter = require('./routes/deleteRouter');
 const indexRouter = require('./routes/indexRouter');
 
 app.use('/new', newRouter);
+app.use('/delete', deleteRouter);
 app.use('/', indexRouter);
 
 // ERROR MIDDLEWARE FUNCTION - HANDLES ALL ERRORS IN APP THAT COMES DOWN FROM OTHER MIDDLEWARE FUNCTIONS
