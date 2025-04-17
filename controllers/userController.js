@@ -1,11 +1,10 @@
-const { body, validationResult, matchedData } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 const db = require('../db/queries');
 
 async function getUsernames(req, res) {
 	const usernames = await db.getAllUsernames();
 	console.log('Usernames: ', usernames);
-	// res.send('Usernames: ' + usernames.map((user) => user.username).join(', '));
-	res.render('index', { title: 'All Users', allUsers: usernames });
+	res.send('Usernames: ' + usernames.map((user) => user.username).join(', '));
 };
 
 async function createUsernameGet(req, res) {
@@ -18,20 +17,8 @@ async function createUsernamePost(req, res) {
 	res.redirect('/');
 };
 
-async function usersSearch (req, res) {
-    const matchedUsers = await db.searchUsername(req.query.usernameSearch);
-    res.render('search', { title: 'Search Results', matchedUsers: matchedUsers });
-};
-
-async function deleteAllUsers (req, res) {
-    await db.deleteAllUsers();
-    res.render('index', { title: 'All Users', allUsers: [] });
-}
-
 module.exports = {
 	getUsernames,
 	createUsernameGet,
 	createUsernamePost,
-    usersSearch,
-    deleteAllUsers
 };
